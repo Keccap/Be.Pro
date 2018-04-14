@@ -1,0 +1,368 @@
+
+.container
+	+wrapper
+
+
+
+
+.logo
+	+play
+	font-style: italic
+	font-weight: 900
+
+
+.navigation-mnu
+	display: flex
+	align-items: center
+	text-transform: uppercase
+	+r(990)
+		display: none
+	&__list
+		display: flex
+		align-items: center
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__item
+		display: inline-flex
+		align-items: center
+		letter-spacing: .04em
+		&:not(:last-child)
+			margin-right: 21px
+
+	&__link
+		display: inline-block
+		padding: 3px 5px
+		font-size: 12px
+		line-height: 1.2
+		text-decoration: none
+		color: #fff
+
+
+.navigation-mnu-item
+	cursor: pointer
+	user-select: none
+	ul
+		display: none
+	&_active
+		.navigation-mnu-item__arrow
+			transform: rotate(-90deg) translateY(15%)
+	&__arrow
+		position: relative
+		top: 1px
+		display: inline-block
+		transform: rotate(90deg)
+		transition: transform .25s ease
+		.icon
+			fill: #fff
+
+
+
+.login-group
+	display: flex
+	align-items: center
+	&__link
+		text-decoration: none
+		color: #fff
+		&:not(:last-child)
+			margin-right: 12px
+		+r(500)
+			display: none
+	&__icon
+		display: none
+		margin-right: 10px
+		+r(500)
+			display: block
+
+
+.button
+	display: inline-block
+	padding: 16px 43px
+	font-size: 18px
+	line-height: 1
+	letter-spacing: 4px
+	text-decoration: none
+	text-transform: uppercase
+	cursor: pointer
+	color: #fff
+	background-color: $purple
+	border: none
+	border-radius: 25px
+	transition: background-color .25s $tr1, color .25s $tr1
+	&:hover, &:focus
+		background-color: lighten($purple, 5%)
+	&_white
+		color: $purple
+		background-color: #fff
+		&:hover, &:focus
+			color: #fff
+			background-color: darken($purple, 5%)
+
+
+.hamburger, .hide-menu
+	+rmin(991)
+		display: none
+
+.hamburger
+	margin-left: 40px
+	+r(600)
+		margin-left: 20px
+
+
+.hide-menu
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 9000
+	transform: translateY(-100%)
+	transition: transform 1s ease
+	&.is-open
+		transform: translateY(0)
+
+
+
+.goods
+	+row
+	justify-content: center
+	&__load-more-wrapper
+		+col
+		+size(12)
+
+
+
+.product-label
+	display: inline-block
+	padding: 3px 10px
+	+mont
+	font-size: 14px
+	font-weight: bold
+	line-height: 1
+	color: #ffffff
+	background-color: $purple
+	border-radius: 5px
+	user-select: none
+	&_white
+		color: $purple
+		background-color: #fff
+
+.popular-product
+	+col
+	+size(3)
+	display: flex
+	flex-direction: column
+	justify-content: center
+	margin-bottom: get-gutter()
+	padding: 50px 29px
+	text-align: center
+	color: #ffffff
+	background-color: $dark
+	&__icon
+		margin-bottom: 29px
+		font-size: 48px
+		color: $purple
+		span
+			display: block
+	&__title
+		margin-bottom: 43px
+		font-size: 18px
+		font-weight: 700
+		line-height: 1
+		text-transform: uppercase
+	&__link
+		font-size: 14px
+		line-height: 1
+		text-decoration: none
+		color: #fff
+		&:hover
+			.icon
+				transform: translateX(3px)
+		.icon
+			position: relative
+			top: .13em
+			left: -.13em
+			margin-left: 12px
+			fill: #fff
+			transition: transform .25s $tr1
+
+
+.product
+	+col
+	+size(3)
+	position: relative
+	margin-bottom: get-gutter()
+	padding: 30px 29px 24px
+	border: 1px solid $borderGrayColor1
+
+	&__photo
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 185px
+		max-width: 100%
+		height: 164px
+		margin: 0 auto 23px
+		overflow: hidden
+		text-align: center
+		transition: transform .25s $tr1
+		&:hover
+			transform: translateY(-5px)
+		img
+			display: inline-block
+			max-width: 100%
+
+
+	&__title
+		margin-top: 0
+		margin-bottom: 5px
+		+play
+		font-size: 18px
+		font-weight: normal
+		color: $dark
+	
+	&__price-wrapper
+		display: flex
+		margin-left: 2px
+		font-size: 14px
+
+	&__price
+		display: inline-block
+		color: $purple
+	
+	&__old-price
+		position: relative
+		display: inline-block
+		margin-right: 18px
+		color: #999
+		&::before
+			content: ''
+			position: absolute
+			top: 53%
+			left: 0
+			z-index: -1
+			width: 100%
+			height: 1px
+			background-color: #999
+
+	&__sale-mark
+		position: absolute
+		top: 10% // 29px
+		right: 9% // 26px
+		
+
+
+
+.exclusive-product
+	+col
+	+size(9)
+	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	align-items: flex-start
+	margin-bottom: get-gutter()
+	padding: 50px 96px
+	overflow: hidden
+	color: #fff
+	background-color: $purple
+	background-size: cover
+	background-position: center center
+
+	&__img
+		position: absolute
+		top: -20px
+		right: 5%
+		bottom: -20px
+		width: 45%
+		img
+			width: 100%
+			height: 100%
+			filter: drop-shadow(0 0 30px rgba(#000, .3))
+			backface-visibility: visible !important
+			transform-style: flat !important
+			user-select: none
+
+	&__text-wrapper
+		z-index: 2
+
+	&__label
+		z-index: 1
+		margin-bottom: 49px
+
+	&__subtitle
+		display: block
+		margin-bottom: 15px
+		font-size: 14px
+		line-height: 1
+		letter-spacing: .2em
+		text-transform: uppercase
+	
+	&__title
+		margin: 0
+		margin-bottom: 30px
+		+play
+		font-size: 30px
+		font-weight: 700
+		line-height: 1
+	
+	&__button
+		position: relative
+		left: -4px
+		padding: 12px 30px 14px
+		font-size: 14px
+		font-weight: 700
+		letter-spacing: 0
+
+	&__price
+		margin-right: 22px
+		font-weight: 400
+	
+	&__action
+		margin-left: 17px
+
+
+
+
+
+
+
+
+.load-more-wrapper
+	width: 100%
+	text-align: center
+
+.load-more-button
+	padding: 15px 20px
+	font-size: 14px
+	font-weight: 700
+	letter-spacing: .1em
+	text-transform: uppercase
+	cursor: pointer
+	color: #232323
+	background-color: transparent
+	border: none
+	outline: none
+	&:hover
+		i
+			transform: rotate(45deg)
+	&.is-loaded
+		i
+			animation: rotate 1.5s infinite linear
+	i
+		margin-right: 10px
+		color: $purple
+		transition: transform .25s $tr1
+
+.goods
+	&__load-more-wrapper
+		+col
+		+size(12)
+		margin-top: 4px
+
+
+
+@keyframes rotate
+	from
+		transform: rotate(45deg)
+	to
+		transform: rotate(360deg);

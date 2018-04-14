@@ -1,0 +1,367 @@
+.hero
+	position: relative
+	display: flex
+	flex-direction: column
+	height: 720px
+	min-height: 600px
+	color: #fff
+	background-color: $purple
+	&__container
+		position: relative
+		flex: 1 0 auto
+		display: flex
+		flex-direction: column
+		width: 100%
+		max-width: 1170px
+		padding: 0
+		+r(1190)
+			padding: 0 15px
+
+	&__content
+		flex: 1 0 auto
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+
+
+.hero-container
+	position: relative
+	width: 100%
+	max-width: 1170px
+	padding: 0
+	+r(1190)
+		padding: 0 15px
+
+
+.header-container
+	position: relative
+	z-index: 2
+	flex: 0 0 auto
+	display: flex
+
+
+
+
+.header
+	+rowF
+	z-index: 2
+	flex: 0 0 auto
+	align-items: center
+	width: 100%
+	height: 33px
+	margin-top: 22px
+
+
+	&__logo
+		margin-right: 100px
+		font-size: 24px
+		line-height: 1.2
+		text-decoration: none
+		color: #fff
+		+r(600)
+			margin-right: 0
+			font-size: 20px
+		
+
+	&__navigation-mnu
+		.navigation-mnu__item:hover
+			.navigation-mnu__link
+				&::before
+					transform: translateY(-50%) scaleX(1)
+					transform-origin: center left
+
+		.navigation-mnu__link
+			position: relative
+		.navigation-mnu__link
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				z-index: -1
+				width: 100%
+				height: 2px
+				background-color: #fff
+				border-radius: 2px
+				transform: translateY(-50%) scaleX(0)
+				transform-origin: center right
+				transition: transform .25s $tr1
+
+	&__login-group
+		margin-right: 38px
+		margin-left: auto
+		+r(500)
+			position: relative
+			top: -3px
+			right: -1px
+			margin-right: 0
+		.login-group__link
+			position: relative
+			padding: 3px 5px
+			font-size: 12px
+			line-height: 1.2
+			text-transform: uppercase
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				z-index: -1
+				width: 100%
+				height: 2px
+				background-color: #fff
+				border-radius: 2px
+				transform: translateY(-50%) scaleX(0)
+				transform-origin: center right
+				transition: transform .25s $tr1
+			&:hover
+				&::before
+					transform: translateY(-50%) scaleX(1)
+					transform-origin: center left
+
+
+.header-icons
+	position: relative
+	top: -3px
+	right: -1px
+	display: flex
+	margin-right: -5px
+
+.header-icon
+	position: relative
+	padding: 5px
+	font-size: 30px
+	line-height: 0
+	cursor: pointer
+	background-color: transparent
+	border-radius: 50%
+	transition: background-color .25s $tr1, transform .25s $tr1
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 110%
+		height: 110%
+	&:hover
+		background-color: #fff
+		transform: scale(.8)
+		&::before
+			transform: scale(1.2)
+		.icon
+			fill: $purple
+	&:not(:last-child)
+		margin-right: 22px
+		+r(600)
+			margin-right: 10px
+	+r(600)
+		font-size: 25px
+	.icon
+		fill: #fff
+		transition: fill .25s $tr1
+
+.basket
+	position: relative
+	&:hover
+		.basket__goods-count
+			color: #ffffff
+			background-color: $purple
+
+	&_no-empty
+		&:hover
+			.icon
+				animation: bounce 1.5s infinite
+		.basket__goods-count
+			display: block
+		.icon
+			animation: shake 5s infinite
+
+	&__goods-count
+		position: absolute
+		right: 3px
+		bottom: 0
+		display: none
+		width: 19px
+		height: 19px
+		font-size: 10px
+		font-weight: 700
+		line-height: 19px
+		text-align: center
+		color: $purple
+		background-color: #ffffff
+		border-radius: 50%
+		transition: color .25s $tr1, background-color .25s $tr1
+	
+
+
+@keyframes shake
+	0%
+		transform: rotate(0)
+	5%
+		transform: rotate(-10deg)
+	10%
+		transform: rotate(10deg)
+	15%, 100%
+		transform: rotate(0)
+
+
+
+@keyframes bounce
+	0%
+		transform: translateY(0)
+	20%
+		transform: translateY(-3px)
+	40%
+		transform: translateY(0)
+	60%
+		transform: translateY(-3px)
+	80%
+		transform: translateY(0)
+
+
+.hero-slider-button-wrapper
+	position: absolute
+	top: 50%
+	left: 50%
+	z-index: 30
+	transform: translate(-50%, -50%)
+
+.hero-slider
+	flex: 1 0 auto
+	display: flex
+	flex-direction: column
+	width: 100%
+	user-select: none
+	&__wrapper
+		flex: 1 0 auto
+	&__slide
+		position: relative
+		flex: 1 0 auto
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		width: 100%
+		height: auto
+		overflow: hidden
+	&-button-prev, &-button-next
+		position: absolute
+		top: 50%
+		z-index: 20
+		font-size: 60px
+		line-height: 0
+		cursor: pointer
+		outline: none
+		transform: translateY(-50%)
+		.icon
+			position: relative
+		+r(900)
+			font-size: 45px
+		+r(600)
+			font-size: 35px
+		+r(500)
+			font-size: 30px
+		.icon
+			fill: #fff
+			transition: fill .25s ease
+	&-button-prev
+		left: 0
+		+r(1190)
+			left: 15px
+		.icon
+			left: -12px
+			+r(900)
+				left: -5px
+	&-button-next
+		right: 0
+		+r(1190)
+			right: 15px
+		.icon
+			right: -12px
+			+r(900)
+				right: 0px
+	&-button_disabled
+		.icon
+			fill: #999
+
+.hero
+	&__button
+		+r(900)
+			font-size: 15px
+		+r(600)
+			font-size: 13px
+
+
+
+	&__title, &__actions
+		position: relative
+		z-index: 10
+		opacity: 0
+		transform: scale(.90) translateY(100%) translateZ(0)
+		transition: opacity .5s .2s $tr1, transform .5s .2s $tr1
+	&__title
+		margin: 40px 0 30px
+		+play
+		font-size: 72px
+		line-height: .87
+		text-transform: capitalize
+		+r(900)
+			font-size: 55px
+		+r(600)
+			font-size: 45px
+		+r(500)
+			font-size: 40px
+	
+	&__img
+		position: absolute
+		bottom: 0
+		left: 50%
+		display: flex
+		justify-content: center
+		width: 100%
+		height: 100%
+		transform: translateX(-50%) translateY(100%) translateZ(0) !important
+		transition: transform .5s .2s $tr1
+		backface-visibility: visible !important
+		user-select: none
+		transform-style: flat !important
+		+r(750)
+			height: 90%
+		img
+			max-width: 100%
+			max-height: 100%
+
+
+	&__background-text
+		position: absolute
+		top: 30%
+		left: 50%
+		+play
+		font-size: 150px
+		font-weight: 700
+		text-align: center
+		text-transform: uppercase
+		color: #0021c4
+		transform: translate(-50%, -50%)
+		user-select: none
+		+r(900)
+			font-size: 120px
+		+r(750)
+			font-size: 95px
+		+r(600)
+			font-size: 80px
+		+r(500)
+			font-size: 70px
+
+
+
+.swiper-slide-active
+	.hero
+		&__img
+			transform: translateX(-50%) translateY(10px) translateZ(0) !important // translateY(13px)
+			transition: transform .5s .25s $tr1
+		&__title, &__actions
+			opacity: 1	
+			transform: scale(1) translateY(0) translateZ(0)
+			transition: opacity .5s .7s $tr1, transform .5s .7s $tr1

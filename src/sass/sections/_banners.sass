@@ -1,0 +1,112 @@
+.s-banners
+	padding: 30px 0
+
+
+.banners-wrapper
+	+row
+
+.banner
+	+col
+	+size(6)
+	+prop(626, 320)
+	position: relative
+	overflow: hidden
+	cursor: pointer
+	color: #ffffff
+	background-color: #d4bdad
+	+r(900)
+		+size(12)
+		margin-bottom: get-gutter()
+
+	&__img
+		position: absolute
+		top: -10px
+		right: 7%
+		bottom: -10px
+		width: 30%
+		img
+			width: 100%
+			height: 100%
+			filter: drop-shadow(0 0 15px rgba(#000, .3))
+			backface-visibility: visible !important
+			transform-style: flat !important
+			user-select: none
+	
+	&__text-wrapper
+		position: absolute
+		top: 0
+		left: 0
+		display: flex
+		flex-direction: column
+		justify-content: center
+		width: 100%
+		height: 100%
+		padding: 4px 80px 0
+		+r(1250)
+			padding: 0 60px
+		+r(1050)
+			padding: 0 45px
+		+r(900)
+			padding: 4px 80px 0
+		+r(550)
+			padding: 0 60px
+		+r(450)
+			padding: 0 25px
+
+	&__product-type
+		max-width: 100%
+		margin-bottom: 12px
+		font-size: 14px
+		line-height: 1
+		letter-spacing: .2em
+		text-transform: uppercase
+		+r(1250)
+			font-size: 12px
+		+r(900)
+			font-size: 14px
+		+r(600)
+			font-size: 13px
+		+r(500)
+			font-size: 12px
+
+
+	&__title
+		max-width: 100%
+		margin: 0
+		margin-bottom: 38px
+		padding-right: 30%
+		+play
+		font-size: 30px
+		font-weight: 700
+		line-height: 1.2
+		+r(1250)
+			font-size: 25px
+		+r(1050)
+			font-size: 21px
+		+r(900)
+			font-size: 30px
+		+r(600)
+			font-size: 25px
+		+r(500)
+			font-size: 22px
+		+r(400)
+			font-size: 19px
+		+r(370)
+			margin-bottom: 18px
+			font-size: 18px
+			
+
+	&__price
+		max-width: 100%
+		font-size: 16px
+		font-weight: 700
+		text-transform: uppercase
+		+r(1250)
+			font-size: 14px
+		+r(900)
+			font-size: 16px
+		+r(600)
+			font-size: 14px
+		+r(500)
+			font-size: 13px
+

@@ -1,0 +1,121 @@
+.s-news-slider
+	position: relative
+	+prop(1366, 400)
+	max-width: 1366px
+	margin: 0 auto
+	+r(900)
+		+prop(1366, 500)
+	+r(750)
+		+prop(1366, 600)
+	+r(600)
+		+prop(1366, 700)
+	+r(450)
+		+prop(1366, 900)
+
+
+.news-slider
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+	&__button-prev, &__button-next
+		position: absolute
+		top: 50%
+		z-index: 1
+		font-size: 36px
+		cursor: pointer
+		transform: translateY(-50%)
+		+r(450)
+			font-size: 25px
+		.icon
+			display: block
+			fill: #fff
+
+	&__button-prev
+		left: 111px
+		+r(1000)
+			left: 40px
+		+r(750)
+			left: 25px
+		+r(450)
+			left: 10px
+		.icon
+			transform: rotate(180deg)
+	
+	&__button-next
+		right: 111px
+		+r(1000)
+			right: 40px
+		+r(750)
+			right: 25px
+		+r(450)
+			right: 10px
+
+	&__pagination
+		bottom: 46px !important
+		+r(1200)
+			bottom: 20px !important
+		.swiper-pagination-bullet
+			width: 7px
+			height: 7px
+			background-color: #999
+			border-radius: 50%
+			opacity: 1
+			transition: background-color .25s $tr1
+			&:not(:last-child)
+				margin-right: 12px
+			&-active
+				background-color: #fff
+
+.news-slide
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	padding: 30px 60px
+	text-align: center
+	color: #fff
+	background-size: cover
+	background-position: center center
+	+r(450)
+		padding: 30px
+	&__subtitle
+		display: block
+		max-width: 100%
+		margin-bottom: 19px
+		font-size: 16px
+		line-height: 1
+		letter-spacing: .2em
+		text-transform: uppercase
+		+r(1100)
+			font-size: 14px
+		+r(750)
+			font-size: 12px
+	&__title
+		max-width: 100%
+		margin: 0 0 2px
+		+play
+		font-size: 36px
+		font-weight: 400
+		line-height: 1.2
+		text-transform: capitalize
+		+r(1100)
+			font-size: 30px
+		+r(750)
+			margin-bottom: 15px
+			font-size: 25px
+			line-height: 1.1
+		+r(400)
+			font-size: 20px
+	&__text
+		max-width: 100%
+		margin: 0
+		font-size: 16px
+		letter-spacing: .02em
+		+r(1100)
+			font-size: 14px
+		+r(750)
+			font-size: 12px
+
