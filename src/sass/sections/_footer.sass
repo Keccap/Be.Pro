@@ -1,0 +1,148 @@
+.footer
+	padding: 43px 0
+	color: #ffffff
+	background-color: #363637
+	+r(550)
+		padding: 55px 0
+	::selection
+		color: #000
+		background-color: #fff
+	
+
+	&__wrapper
+		+row
+		+r(900)
+			justify-content: center
+
+	&__left
+		+col
+		+size(3)
+		padding: 0 26px
+		+r(1100)
+			padding: 0 15px
+		+r(900)
+			+size(3)
+			text-align: center
+		+r(840)
+			+size(5)
+		+r(550)
+			+size(12)
+			margin-bottom: 70px
+			padding: 0
+	&__center
+		+col
+		+size(6)
+		display: flex
+		flex-direction: column
+		padding: 0 43px 0 47px
+		+r(1100)
+			padding: 0 23px 0 27px
+		+r(900)
+			+size(12)
+			order: -1
+			margin-bottom: 70px
+			padding: 0
+			text-align: center
+
+	&__right
+		+col
+		+size(3)
+		display: flex
+		flex-direction: column
+		padding: 0 7px
+		+r(1100)
+			padding: 0
+		+r(900)
+			+size(4)
+			text-align: center
+		+r(840)
+			+size(5)
+		+r(550)
+			+size(12)
+
+
+	&__logo
+		position: relative
+		top: -10px
+		margin-bottom: 39px
+		+r(900)
+			top: 0
+		+r(550)
+			margin-bottom: 30px
+			font-size: 40px
+
+	&__social-links
+		.social-link
+			+r(550)
+				font-size: 18px
+			&:not(:last-child)
+				+r(1000)
+					margin-right: 3px
+
+	&__subscribe-wrapper
+		margin-top: auto
+
+
+	&__subscribe-news
+		.subscribe-news__input
+			padding: 14px 10px 12px 15px
+		+r(900)
+			.subscribe-news__form
+				justify-content: center
+			.subscribe-news__title
+				margin-bottom: 23px
+				font-size: 10px
+			.subscribe-news__input
+				flex: 0 1 auto
+				width: 320px
+		+r(550)
+			.subscribe-news__title
+				margin-bottom: 23px
+				font-size: 12px
+			.subscribe-news__button
+				padding: 14px 30px
+		+r(450)
+			.subscribe-news__button
+				padding: 14px 25px
+			.subscribe-news__input
+				padding: 14px 10px 12px
+
+	&__payments
+		margin-top: auto
+		
+
+
+.footer-contacts
+	margin-bottom: 18px
+	font-size: 12px
+	+r(1000)
+		font-size: 11px
+	+r(550)
+		font-size: 12px
+	&__title
+		display: block
+		margin-bottom: 28px
+		line-height: 1
+		letter-spacing: .07em
+		text-transform: uppercase
+
+
+.footer-navigation
+	position: relative
+	top: -10px
+	left: -5px
+	margin-bottom: 42px
+	+r(900)
+		margin-bottom: 30px
+	&__item
+		&:not(:last-child)
+			margin-right: 27px
+			+r(1300)
+				margin-right: 20px
+			+r(1200)
+				margin-right: 15px
+			+r(500)
+				margin-right: 10px
+
+
+

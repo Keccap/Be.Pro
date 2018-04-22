@@ -1,15 +1,18 @@
-import Swiper from 'swiper/dist/js/swiper';
+import Swiper from 'Swiper';
+import { documentLoaded } from '../helpers/functions';
 
 
 
-const newsSlider = new Swiper('.news-slider', {
-  speed: 600,
-  loop: true,
-  pagination: {
-    el: '.news-slider__pagination',
-  },
-  navigation: {
-    nextEl: '.news-slider__button-next',
-    prevEl: '.news-slider__button-prev',
-  }
-});
+documentLoaded(() => {
+  const newsSlider = new Swiper('.news-slider', {
+    speed: 600,
+    loop: true,
+    pagination: {
+      el: '.news-slider__pagination',
+    },
+    navigation: {
+      nextEl: '.news-slider__button-next',
+      prevEl: '.news-slider__button-prev',
+    }
+  });
+})

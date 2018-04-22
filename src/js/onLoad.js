@@ -9,6 +9,8 @@ documentLoaded(() => {
   OFIwithLazyload();
   preloaderLoad();
   noDragElements('img');
+
+  document.body.classList.add('is-loaded')
 });
 // ONLOAD END
 

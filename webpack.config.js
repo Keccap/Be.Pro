@@ -30,7 +30,7 @@ function createConfig(env) {
       sourceMapFilename: 'sourcemaps/[file].map',
       pathinfo: !isProduction
     },
-    devtool: isProduction ? false : 'cheap-inline-module-source-map',
+    devtool: isProduction ? 'source-map' : 'cheap-inline-module-source-map',
 
     plugins: [
       new webpack.NoEmitOnErrorsPlugin(),
@@ -80,6 +80,7 @@ function createConfig(env) {
     resolve: {
       extensions: ['.js'],
       alias: {
+        Swiper: path.resolve('node_modules', 'swiper/dist/js/swiper'),
         TweenLite: path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
         TweenMax: path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
         TimelineLite: path.resolve('node_modules', 'gsap/src/uncompressed/TimelineLite.js'),

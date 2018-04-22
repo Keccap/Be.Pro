@@ -6,5 +6,8 @@ import './components/exclusive-product';
 import './test/main-load-more';
 import './components/news-slider';
 import './components/banner';
+import './components/blog-banner';
+import './components/popular-blogs-slider';
+import './components/svg-img';
+import './components/partners-carousel';
 import './onLoad';
-

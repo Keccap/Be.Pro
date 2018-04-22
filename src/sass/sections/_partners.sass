@@ -1,0 +1,66 @@
+.s-partners
+	padding: 52px 0 74px
+	&__container
+		padding: 0 53px
+		+r(500)
+			padding: 0 10px
+		
+
+
+.partners-carousel
+	&__wrapper
+		display: flex
+		align-items: center
+
+	&__button-prev, &__button-next
+		position: absolute
+		top: 50%
+		z-index: 1
+		font-size: 36px
+		cursor: pointer
+		transform: translateY(-50%)
+		+r(450)
+			font-size: 25px
+		.icon
+			display: block
+			fill: $purple
+
+	&__button-prev
+		left: 0
+		.icon
+			transform: rotate(180deg)
+	
+	&__button-next
+		right: 0
+
+	&-button_disabled
+		.icon
+			fill: #999
+		 
+
+.partners-slide
+	display: flex
+	justify-content: center
+	align-items: center
+	overflow: hidden
+
+.partner
+	width: 50%
+	text-decoration: none
+	&:hover
+		svg
+			path
+				fill: $purple !important
+	svg, img
+		width: 100%
+		height: auto
+		path
+			fill: #999 !important
+			transition: fill .25s $tr1
+
+	&_villatex
+		width: 60%
+	&_francois
+		width: 55%
+	&_cropit
+		width: 54%

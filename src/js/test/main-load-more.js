@@ -1,14 +1,14 @@
 import exclusiveProductsImg from '../components/exclusive-product';
+import {objectFitImages} from '../polyfills/css/object-fit-images/my-lazySizes-version/OFLwithLazyload.js';
 
 
-const mainLoadMore = document.querySelector('#main-load-more');
+const mainLoadMoreButton = document.querySelector('#main-load-more');
 
 const mainLoadMoreClickHandler = () => {
-  let loadCound = 0;
+  let loadCount = 0;
 
   return function (event) {
-
-    this.classList.add('is-loaded');
+    this.classList.add('is-loading');
 
     const request = new Promise((resolve, reject) => {
       setTimeout(resolve, 1000);
@@ -17,9 +17,9 @@ const mainLoadMoreClickHandler = () => {
     request.then(data => {
       for (let i = 0; i < 8; i++) {
         const good = document.createElement('div');
-        const isSale = Math.random() > 0.7;
+        const isSale = Math.random() < 0.3;
         const price = Math.ceil(Math.random() * 100) + 100;
-        const exclusive = Math.random() > 0.95;
+        const exclusive = Math.random() < 0.1;
 
         if (exclusive) {
           const idImg = Math.ceil(Math.random() * 2 + 1)
@@ -54,16 +54,18 @@ const mainLoadMoreClickHandler = () => {
 
         this.parentNode.before(good);
         if (exclusive) {
-          const img = good.querySelector('.exclusive-product__img');
-          exclusiveProductsImg(img);
+          const imgWrap = good.querySelector('.exclusive-product__img');
+          exclusiveProductsImg(imgWrap);
+          const img = imgWrap.querySelector('img');
+          objectFitImages('.exclusive-product__img img');
         }
       }
 
-      this.classList.remove('is-loaded');
-      if (++loadCound >= 3) this.parentNode.remove();
+      this.classList.remove('is-loading');
+      if (++loadCount >= 3) this.parentNode.remove();
     })
 
   }
 }
 
-mainLoadMore.addEventListener('click', mainLoadMoreClickHandler());
+mainLoadMoreButton.addEventListener('click', mainLoadMoreClickHandler());

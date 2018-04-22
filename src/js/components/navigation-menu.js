@@ -1,3 +1,4 @@
+
 const navigationMnuItem = [...document.querySelectorAll('.navigation-mnu-item')];
 
 navigationMnuItem.forEach(item => {

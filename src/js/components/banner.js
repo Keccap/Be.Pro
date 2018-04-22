@@ -1,5 +1,5 @@
 import Parallax from 'parallax-js';
-
+import { documentLoaded } from '../helpers/functions';
 
 
 function init(elems) {
@@ -13,6 +13,8 @@ function init(elems) {
     parallaxInstance.scalar(4, 4); // 2, 2
 
     parallaxInstance.hoverOnly = true;
+
+    img.setAttribute('data-parallax-init', '');
   }
 
   if (Array.isArray(elems)) {
@@ -23,8 +25,10 @@ function init(elems) {
 
 }
 
-const bannersImg = [...document.querySelectorAll('.banner__img')];
-init(bannersImg);
+documentLoaded(() => {
+  const bannersImg = [...document.querySelectorAll('.banner__img:not([data-parallax-init])')];
+  init(bannersImg);
+});
 
 
 export default init;
