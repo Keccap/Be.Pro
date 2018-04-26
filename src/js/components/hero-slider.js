@@ -7,7 +7,7 @@ import { documentLoaded } from '../helpers/functions';
 
 export const heroSlider = new Swiper('.hero-slider', {
   speed: 600,
-  mousewheel: true,
+  // mousewheel: true,
   navigation: {
     nextEl: '.hero-slider-button-next',
     prevEl: '.hero-slider-button-prev',
