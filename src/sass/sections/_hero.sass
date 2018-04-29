@@ -4,8 +4,11 @@
 	flex-direction: column
 	height: 720px
 	min-height: 600px
+	padding-top: 33px
 	color: #fff
 	background-color: $purple
+	+r(990)
+		padding-top: 86px
 
 	&__content
 		flex: 1 0 auto
@@ -21,9 +24,23 @@
 	width: 100%
 
 .header-container
-	z-index: 2
+	position: absolute
+	top: 0
+	left: 50%
+	z-index: 1000
 	flex: 0 0 auto
 	display: flex
+	width: 100%
+	background-color: transparent
+	transform: translateX(-50%)
+	transition: background .3s .2s linear
+	&.no-bg
+		background-color: transparent !important
+		transition: background .3s .3s linear
+	+r(990)
+		position: fixed
+		padding-bottom: 15px
+		background-color: $purple
 
 
 
@@ -35,6 +52,8 @@
 	width: 100%
 	height: 33px
 	margin-top: 22px
+	+r(990)
+		margin-top: 20px
 
 
 	&__logo

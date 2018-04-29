@@ -4,7 +4,8 @@
 	&_small
 		max-width: #{1170 + $grid-gutter + 'px'}
 		+r(1190)
-			padding: 0 15px
+			padding-right: 15px
+			padding-left: 15px
 
 
 
@@ -56,7 +57,6 @@
 			width: 100%
 			height: 2px
 			background-color: #fff
-			border-radius: 2px
 			transform: translateY(-50%) scaleX(0)
 			transform-origin: center right
 			transition: transform .25s $tr1
@@ -132,16 +132,107 @@
 		margin-left: 20px
 
 
+
+
 .hide-menu
 	position: fixed
 	top: 0
+	right: 0
+	bottom: 0
 	left: 0
-	z-index: 9000
-	transform: translateY(-100%)
-	transition: transform 1s ease
-	&.is-open
-		transform: translateY(0)
+	z-index: 100
+	display: flex
+	justify-content: center
+	align-items: center
+	overflow: auto
+	background-color: rgba($purple, .95)
+	opacity: 0
+	visibility: hidden
+	transition: opacity .3s linear, visibility .3s linear
 
+	&__rotate
+		position: absolute
+		top: 50%
+		left: 50%
+		display: none
+		width: 90px
+		height: 90px
+		transform: translate(-50%, -50%)
+		+landscape
+			display: block
+
+	&.is-active
+		opacity: 1
+		visibility: visible
+		.hide-menu__inner
+			opacity: 1
+			visibility: visible
+
+	&.is-complete
+		.navigation-mnu__item
+			opacity: 1
+			transform: translateY(0)
+
+	&__inner
+		opacity: 0
+		visibility: hidden
+		transition: visibility .3s ease, opacity .3s ease
+		+landscape
+			display: none !important
+
+	&__navigation-mnu
+		.navigation-mnu__list
+			display: flex
+			flex-direction: column
+			align-items: center
+		.navigation-mnu__item
+			margin: 0 0 10px
+			opacity: 0
+			transform: translateY(30px)
+			transition: opacity .25s ease, transform .25s ease
+			&:last-of-type
+				margin: 0
+		.navigation-mnu__link
+			padding: 5px 10px
+			font-size: 47px
+			font-weight: bold
+			&::before
+				height: 6px
+				
+			+r(750)
+				font-size: 40px
+			+r(550)
+				font-size: 30px
+			+r(450)
+				font-size: 25px
+
+	&__social-wrap
+		position: absolute
+		right: 0
+		bottom: 30px
+		left: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		opacity: 0
+		transition: opacity .25s ease
+
+		.is-complete &
+			opacity: 1
+
+	&__social-link
+		display: flex
+		align-items: center
+		text-decoration: none
+		opacity: .65
+		transition: opacity .25s ease
+		&:hover
+			opacity: 1
+		&:not(:last-child)
+			margin-right: 20px
+		i
+			font-size: 24px
+			color: #fff
 
 
 .goods
